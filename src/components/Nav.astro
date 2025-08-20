@@ -1,0 +1,57 @@
+---
+const links = [
+  { text: "Inicio", href: "/" },
+  { text: "Servicios", href: "/servicios" },
+  { text: "Sobre nosotros", href: "/sobre-nosotros" },
+  { text: "Contacto", href: "/contacto" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav
+  class="text-md font-semibold flex justify-between items-center h-full px-3"
+>
+  <a href="/" class="text-lg flex items-center gap-1">
+    <img
+      src="/favicon.svg"
+      alt="Alambrados Melillo"
+      loading="eager"
+      class="size-14"
+    />
+    <span> Alambrados Melillo </span>
+  </a>
+  <ul class="hidden sm:flex">
+    {
+      links.map(({ text, href }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              " mx-3",
+              {
+                "text-red-600": currentPath === href,
+              },
+            ]}
+          >
+            {text}
+          </a>
+          {currentPath === href && (
+            <div
+              transition:name="menu-link"
+              class="border-b-2 border-red-500 mx-3"
+            />
+          )}
+        </li>
+      ))
+    }
+    <!-- <li class="hover:text-red-600 transition-colors duration-300">
+      <a href="/servicios">Servicios</a>
+    </li>
+    <li class="hover:text-red-600 transition-colors duration-300">
+      <a href="/sobre-nosotros">Sobre nosotros</a>
+    </li>
+    <li class="hover:text-red-600 transition-colors duration-300">
+      <a href="/contacto">Contacto</a> -->
+  </ul>
+</nav>

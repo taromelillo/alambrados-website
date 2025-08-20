@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const services = await getCollection("servicios");
+---
+
+<Layout title={"servicios"}>
+  {
+    services.map((service) => (
+      <article>
+        <h2 class="text-xl font-semibold">{service.data.title}</h2>
+        <p></p>
+      </article>
+    ))
+  }
+</Layout>

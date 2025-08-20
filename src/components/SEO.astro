@@ -1,0 +1,170 @@
+---
+const { description, canonical, title } = Astro.props;
+---
+
+<meta name="description" content={description} />
+{canonical && <link rel="canonical" href={canonical} />}
+
+<meta property="og:url" content="https://www.alambradosmelillo.com.ar" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta
+  property="og:image"
+  content="https://www.alambradosmelillo.com.ar/og.jpg"
+/>
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Alambrados Melillo | " />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta
+  name="twitter:image"
+  content="https://www.alambradosmelillo.com.ar/og.jpg"
+/>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Especialistas en Protecciones para Hogar y Negocio",
+    "description": "Instalación profesional de cercos, rejas, puertas, portones, mosquiteros y defensas para balcones y natatorios",
+    "image": "https://www.alambradosmelillo.com.ar/images/logo.jpg",
+    "@id": "https://www.alambradosmelillo.com.ar",
+    "url": "https://www.alambradosmelillo.com.ar",
+    "telephone": "+5401147921918",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rodríguez Pena 17",
+      "addressLocality": "Martínez",
+      "addressRegion": "Provincia de Buenos Aires",
+      "postalCode": "B1640IFN"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Monday",
+        "opens": "09:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Monday",
+        "opens": "15:00",
+        "closes": "18:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Tuesday",
+        "opens": "09:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Tuesday",
+        "opens": "15:00",
+        "closes": "18:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Wednesday",
+        "opens": "09:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Wednesday",
+        "opens": "15:00",
+        "closes": "18:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Thursday",
+        "opens": "09:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Thursday",
+        "opens": "15:00",
+        "closes": "18:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "09:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "15:00",
+        "closes": "18:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "00:00",
+        "closes": "00:00",
+        "description": "Cerrado"
+      }
+    ],
+    "makesOffer": [
+      {
+        "@type": "Product",
+        "name": "Cercos Perimetrales",
+        "description": "Sistemas de delimitación segura para propiedades",
+        "material": "Acero galvanizado"
+      },
+      {
+        "@type": "Product",
+        "name": "Rejas de Seguridad",
+        "description": "Protección para ventanas y accesos",
+        "material": "Hierro/Acero inoxidable"
+      },
+      {
+        "@type": "Product",
+        "name": "Puertas y Portones",
+        "description": "Accesos seguros manuales o automáticos",
+        "material": "Acero/Aluminio"
+      },
+      {
+        "@type": "Product",
+        "name": "Mosquiteros",
+        "description": "Protección contra insectos con marco de aluminio",
+        "material": "Aluminio y fibra de vidrio"
+      },
+      {
+        "@type": "Product",
+        "name": "Defensas para Balcones",
+        "description": "Sistemas de seguridad para alturas",
+        "material": "Acero inoxidable"
+      },
+      {
+        "@type": "Product",
+        "name": "Defensas para Natatorios",
+        "description": "Protección especializada para áreas de piscina",
+        "material": "Acero resistente a la humedad"
+      }
+    ],
+    "hasService": [
+      {
+        "@type": "Service",
+        "name": "Cambio de Tela Mosquiteros",
+        "description": "Reemplazo profesional de mallas para mosquiteros"
+      },
+      {
+        "@type": "Service",
+        "name": "Cerramientos de Aluminio",
+        "description": "Instalación de sistemas de cerramiento para espacios exteriores"
+      }
+    ]
+  }
+</script>
