@@ -1,8 +1,9 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const links = [
   { text: "Inicio", href: "/" },
   { text: "Servicios", href: "/servicios" },
-  { text: "Sobre nosotros", href: "/sobre-nosotros" },
   { text: "Contacto", href: "/contacto" },
 ];
 
@@ -21,6 +22,9 @@ const currentPath = Astro.url.pathname;
     />
     <span> Alambrados Melillo </span>
   </a>
+  <button id="menu-btn">
+    <Icon name="menu" size="28" class="flex sm:hidden" />
+  </button>
   <ul class="hidden sm:flex">
     {
       links.map(({ text, href }) => (
@@ -55,3 +59,16 @@ const currentPath = Astro.url.pathname;
       <a href="/contacto">Contacto</a> -->
   </ul>
 </nav>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const menuBtn = document.getElementById("menu-btn") as HTMLButtonElement;
+    const nav = document.getElementById("xs-nav") as HTMLDivElement;
+    const sidenav: NodeListOf<HTMLDivElement> =
+      document.querySelectorAll("#sidenav div");
+    menuBtn.addEventListener("click", () => {
+      nav.classList.toggle("translate-x-full");
+      sidenav.forEach((div) => div.classList.toggle("hidden"));
+    });
+  });
+</script>

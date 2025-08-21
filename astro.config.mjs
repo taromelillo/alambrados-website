@@ -1,15 +1,26 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
 
-import sitemap from '@astrojs/sitemap';
+import sitemap from "@astrojs/sitemap";
+
+import icon from "astro-icon";
+
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
+  output: "server",
+  site: "https://www.alambradosmelillo.com.ar",
+
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    ssr: {
+      external: ["node:fs/promises", "node:path", "node:url", "node:crypto"],
+    },
   },
 
-  integrations: [sitemap()]
+  integrations: [sitemap(), icon()],
+  adapter: cloudflare({ imageService: "cloudflare" }),
 });
