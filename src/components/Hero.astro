@@ -1,7 +1,15 @@
+---
+import Button from "./Button.astro";
+
+import { PHONE_NUMBER } from "astro:env/server";
+---
+
 <section
-  class="bg-yellow-500 my-7 rounded-xl w-full grid grid-cols-1 md:grid-cols-5 overflow-hidden"
+  class="my-7 rounded-xl w-full grid grid-cols-1 md:grid-cols-5 overflow-hidden bg-white"
 >
-  <article class="p-2 flex flex-col col-span-1 md:col-span-3 bg-green-500">
+  <article
+    class="p-2 py-7 h-[350px] flex flex-col justify-center col-span-1 md:col-span-3"
+  >
     <h1
       class="text-4xl sm:text-4xl font-semibold text-balance text-center leading-snug"
     >
@@ -13,11 +21,16 @@
       hogar y negocio
     </p>
 
-    <a href="/" target="_blank" class="button mx-auto my-3"
-      >Solicitar Cotización</a
+    <Button
+      hrf={`https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=Hola, quería solicitar el presupuesto de: `}
+      >Solicitar Cotización</Button
     >
   </article>
-  <article class="bg-blue-700 col-span-1 md:col-span-2 h-6">
+  <article class="relative col-span-1 md:col-span-2 h-[350px] bg-white">
+    <div
+      class="absolute inset-0 bg-[url('/images/alambre1.webp')] bg-cover bg-center [mask-image:linear-gradient(transparent,black_50%)] md:[mask-image:linear-gradient(to_right,transparent,black_50%)]"
+    >
+    </div>
     <img src="" alt="" title="" />
   </article>
 </section>
