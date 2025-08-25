@@ -1,1 +1,52 @@
-<footer></footer>
+---
+import { Icon } from "astro-icon/components";
+import { PHONE_NUMBER } from "astro:env/server";
+---
+
+<footer
+  class="max-w-7xl w-full px-2 grid grid-cols-1 sm:grid-cols-2 gap-1 bg-transparent"
+>
+  <div
+    class="h-[1px] bg-red-400/70 mx-auto w-[45%] mb-5 col-span-1 sm:col-span-2"
+  >
+  </div>
+
+  <div
+    class="col-span-1 sm:col-span-2 flex flex-col-reverse sm:flex-row items-center justify-between gap-2"
+  >
+    <div class="pl-4">
+      <p class="text-sm text-pretty text-center">
+        © 2025 Alambrados Melillo | Todos los derechos reservados.
+      </p>
+    </div>
+
+    <div class="gap-4 flex justify-center items-center">
+      <a href="https://www.facebook.com/profile.php?id=100057268907592">
+        <Icon
+          name="facebook"
+          size={28}
+          class="text-red-500"
+          title="Alambrados Melillo Facebook"
+        />
+      </a>
+      <a
+        href=`https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=Hola, quería solicitar el presupuesto de: `
+      >
+        <Icon
+          name="whatsapp"
+          size={28}
+          class="text-red-500"
+          title="Alambrados Melillo WhatsApp"
+        />
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-7xl w-full flex justify-center col-span-1 sm:col-span-2">
+    <p class="text-slate-500 text-sm">
+      Desarrollado por <a href="https://www.mahoysolutions.com/es">
+        <span class="text-red-400"> Mahoy Solutions </span>
+      </a>
+    </p>
+  </div>
+</footer>
