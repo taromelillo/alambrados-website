@@ -1,28 +1,33 @@
 ---
 const { description, canonical, title } = Astro.props;
+const baseUrl = "https://www.alambradosmelillo.com.ar/";
 ---
 
 <meta name="description" content={description} />
-{canonical && <link rel="canonical" href={canonical} />}
+{
+  canonical && (
+    <link
+      rel="canonical"
+      href={`https://www.alambradosmelillo.com.ar${canonical}`}
+    />
+  )
+}
 
-<meta property="og:url" content="https://www.alambradosmelillo.com.ar" />
+<meta property="og:url" content={baseUrl} />
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta
-  property="og:image"
-  content="https://www.alambradosmelillo.com.ar/og.jpg"
-/>
+<meta property="og:image" content={`${baseUrl}og.jpg"`} />
 <meta property="og:locale" content="es_AR" />
-<meta property="og:site_name" content="Alambrados Melillo | " />
+<meta
+  property="og:site_name"
+  content="Cerramientos y Alambrados | Alambrados Melillo"
+/>
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta
-  name="twitter:image"
-  content="https://www.alambradosmelillo.com.ar/og.jpg"
-/>
+<meta name="twitter:image" content={`${baseUrl}og.jpg"`} />
 
 <script type="application/ld+json">
   {
@@ -116,6 +121,28 @@ const { description, canonical, title } = Astro.props;
         "description": "Cerrado"
       }
     ],
+    "hasService": [
+      {
+        "@type": "Service",
+        "name": "Cambio de Tela Mosquiteros",
+        "description": "Reemplazo profesional de mallas para mosquiteros"
+      },
+      {
+        "@type": "Service",
+        "name": "Cerramientos de Aluminio",
+        "description": "Instalación de sistemas de cerramiento para espacios exteriores"
+      },
+      {
+        "@type": "Service",
+        "name": "Colocación de Cerramientos",
+        "description": "Instalación de sistemas de cerramiento para espacios exteriores"
+      },
+      {
+        "@type": "Service",
+        "name": "Colocación de Alambrados",
+        "description": "Instalación de sistemas de cerramiento para espacios exteriores"
+      }
+    ],
     "makesOffer": [
       {
         "@type": "Product",
@@ -152,18 +179,6 @@ const { description, canonical, title } = Astro.props;
         "name": "Defensas para Natatorios",
         "description": "Protección especializada para áreas de piscina",
         "material": "Acero resistente a la humedad"
-      }
-    ],
-    "hasService": [
-      {
-        "@type": "Service",
-        "name": "Cambio de Tela Mosquiteros",
-        "description": "Reemplazo profesional de mallas para mosquiteros"
-      },
-      {
-        "@type": "Service",
-        "name": "Cerramientos de Aluminio",
-        "description": "Instalación de sistemas de cerramiento para espacios exteriores"
       }
     ]
   }

@@ -1,7 +1,68 @@
 ---
+import Form from "@/components/Form.astro";
 import Layout from "../layouts/Layout.astro";
+import ContactInfo from "@/components/ContactInfo.astro";
+import { PHONE_NUMBER } from "astro:env/server";
+import Button from "@/components/Button.astro";
+import SecondaryButton from "@/components/SecondaryButton.astro";
 ---
 
-<Layout title={"contacto"}>
-  <div>Hola</div>
+<Layout
+  title={"Presupuesto para Cerramientos y Alambrados"}
+  description={"Solicita presupuesto para la instalación de cerramientos sin compromiso. Somos los expertos en cerramientos de Martinez, provincia de Buenos Aires."}
+  canonical={"/contacto"}
+>
+  <section
+    class="rounded-xl w-full my-7 grid grid-cols-1 md:grid-cols-2 bg-white overflow-hidden"
+  >
+    <article
+      class="h-[350px] p-2 py-7 col-span-1 md:col-span-1 flex flex-col justify-center items-center gap-4"
+    >
+      <h1 class="text-red-400 text-4xl font-semibold text-center">
+        Contacta con Nosotros
+      </h1>
+      <p class="text-lg text-slate-500">Consultanos sin cargo</p>
+      <div class="flex flex-row flex-wrap-reverse justify-between gap-2">
+        <SecondaryButton
+          hrf={"https://maps.google.com/maps/dir//Rodr%C3%ADguez+Pena+17+B1640IFN+Mart%C3%ADnez+Provincia+de+Buenos+Aires/@-34.4888325,-58.5014936,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x95bcb1a91344c903:0xce6153a3b2a72518"}
+          >Visitanos</SecondaryButton
+        >
+        <Button
+          hrf={`https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=Hola, quería hacer una consulta sobre: `}
+          >Consultanos</Button
+        >
+      </div>
+    </article>
+    <article class="relative col-span-1 h-[350px]">
+      <div
+        class="absolute inset-0 bg-[url('/images/local.webp')] bg-cover bg-center [mask-image:linear-gradient(transparent,black_50%)] md:[mask-image:linear-gradient(to_right,transparent,black_50%)]"
+      >
+      </div>
+    </article>
+  </section>
+  <section class="grid grid-cols-1 md:grid-cols-2 rounded-md overflow-hidden">
+    <article
+      class="col-span-1 py-3 px-2 bg-white flex flex-col items-center gap-1"
+    >
+      <h2 class="text-2xl font-semibold text-center mt-2 mb-4 text-red-400">
+        Información de Contacto
+      </h2>
+      <ContactInfo icon="📍" title="Dirección">
+        <p>Rodríguez Pena 17, Martínez,<br /> Buenos Aires.</p>
+      </ContactInfo>
+      <ContactInfo icon="📞" title="Teléfono">
+        <p>+{PHONE_NUMBER}</p>
+      </ContactInfo>
+      <ContactInfo icon="🕒" title="Horarios">
+        <p>Lun - Vie: 9:00 - 12:00, 12:00 - 18:00</p>
+        <p>Sábados: 9:00 - 12:00</p>
+      </ContactInfo>
+    </article>
+    <article class="col-span-1 py-3 px-2 bg-white">
+      <h2 class="text-2xl font-semibold text-center my-2 text-red-400">
+        Envianos tu consulta
+      </h2>
+      <Form />
+    </article>
+  </section>
 </Layout>

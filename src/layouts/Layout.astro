@@ -2,7 +2,7 @@
 import "@/styles/global.css";
 import Header from "@/scafolding/Header.astro";
 import Footer from "@/scafolding/Footer.astro";
-const { title } = Astro.props;
+const { title, description, canonical } = Astro.props;
 
 import { ClientRouter } from "astro:transitions";
 import SEO from "@/components/SEO.astro";
@@ -15,11 +15,11 @@ import Sidenav from "@/components/Sidenav.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <SEO />
-    <title>{title}</title>
+    <SEO {description} {canonical} title={`${title} - Alambrados Melillo`} />
+    <title>{`${title} - Alambrados Melillo`}</title>
     <ClientRouter />
   </head>
-  <body class="bg-red-50 flex justify-center">
+  <body class="bg-red-50 flex flex-col justify-between gap-10 items-center">
     <Header />
     <Sidenav />
     <main class="max-w-7xl min-h-screen mt-20 mx-auto w-full sm:px-5">
