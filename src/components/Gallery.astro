@@ -1,0 +1,155 @@
+---
+import "photoswipe/style.css";
+
+const images = [
+  {
+    width: 1511,
+    height: 2015,
+  },
+  {
+    width: 1511,
+    height: 2015,
+  },
+  {
+    width: 720,
+    height: 960,
+  },
+  {
+    width: 1200,
+    height: 1599,
+  },
+  {
+    width: 1200,
+    height: 1599,
+  },
+  {
+    width: 1200,
+    height: 1599,
+  },
+  {
+    width: 1200,
+    height: 1599,
+  },
+  {
+    width: 720,
+    height: 960,
+  },
+  {
+    width: 720,
+    height: 960,
+  },
+  {
+    width: 720,
+    height: 960,
+  },
+  {
+    width: 1200,
+    height: 1599,
+  },
+  {
+    width: 1200,
+    height: 1599,
+  },
+  {
+    width: 1200,
+    height: 1599,
+  },
+  {
+    width: 750,
+    height: 1202,
+  },
+  {
+    width: 750,
+    height: 1202,
+  },
+  {
+    width: 750,
+    height: 1194,
+  },
+  {
+    width: 1040,
+    height: 780,
+  },
+  {
+    width: 1040,
+    height: 780,
+  },
+  //   {
+  //     width: 576,
+  //     height: 892,
+  //   },
+  {
+    width: 1200,
+    height: 1599,
+  },
+  {
+    width: 1200,
+    height: 1599,
+  },
+  {
+    width: 1536,
+    height: 2048,
+  },
+  {
+    width: 1536,
+    height: 2048,
+  },
+  //   {
+  //     width: 960,
+  //     height: 719,
+  //   },
+];
+---
+
+<div
+  class="pswp-gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1.5"
+  id="gallery"
+>
+  {
+    Array.from({ length: 22 }, (_, i) => (
+      <a
+        class=""
+        class:list={[
+          // `aspect-w-${images[i].width} aspect-h-${images[i].height}`,
+          images[i].width > images[i].height ? "col-span-2" : "col-span-1",
+          // images[i].width > images[i].height ? "": ""
+        ]}
+        href={`/images/alambre${i + 1}.webp`}
+        data-pswp-width={images[i].width}
+        data-pswp-height={images[i].height}
+        target="_blank"
+      >
+        {/* <div class="h-[300px] w-[300px] object-center"> */}
+        <img
+          src={`/images/alambre${i + 1}.webp`}
+          class:list={[
+            "object-fit",
+            // "col-span-1",
+            // `aspect-w-${images[i].width} aspect-h-${images[i].height}`,
+            // images[i].width > images[i].height ? "col-span-2" : "col-span-1",
+            // images[i].width > images[i].height ? "": ""
+          ]}
+          loading="lazy"
+          alt="Foto de trabajos de Alambres Melillo"
+        />
+        {/* </div> */}
+      </a>
+    ))
+  }
+</div>
+
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+
+  const showGallery = () => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: "#gallery",
+      children: "a",
+      pswpModule: () => import("photoswipe"),
+    });
+
+    lightbox.init();
+  };
+
+  document.addEventListener("astro:page-load", showGallery);
+</script>
