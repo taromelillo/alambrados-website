@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -23,4 +23,13 @@ export default defineConfig({
 
   integrations: [sitemap(), icon()],
   adapter: cloudflare({ imageService: "cloudflare" }),
+
+  env: {
+    schema: {
+      PHONE_NUMBER: envField.string({
+        context: "server",
+        access: "public",
+      }),
+    },
+  },
 });
