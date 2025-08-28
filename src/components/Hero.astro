@@ -2,13 +2,14 @@
 import Button from "./Button.astro";
 
 import { PHONE_NUMBER } from "astro:env/server";
+import SecondaryButton from "./SecondaryButton.astro";
 ---
 
 <section
-  class="my-7 rounded-xl w-full grid grid-cols-1 md:grid-cols-4 overflow-hidden bg-white"
+  class="my-7 rounded-xl w-full grid grid-cols-1 md:grid-cols-2 overflow-hidden bg-white"
 >
   <article
-    class="p-2 py-7 h-[350px] flex flex-col justify-center col-span-1 md:col-span-2"
+    class="p-2 py-7 h-[350px] flex flex-col justify-center col-span-1 md:col-span-1"
   >
     <h1
       class="text-4xl sm:text-4xl font-semibold text-balance text-center leading-snug"
@@ -17,17 +18,24 @@ import { PHONE_NUMBER } from "astro:env/server";
       <br />
       Alambrados y Cerramientos
     </h1>
-    <p class="text-pretty text-center text-xl mt-4">
+    <p class="text-pretty text-center text-md text-slate-500 mt-4">
       Especialistas en cercos, rejas, portones, mosquiteros y defensas para tu
       hogar y negocio
     </p>
 
-    <Button
-      hrf={`https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=Hola, quería solicitar el presupuesto de: `}
-      >Solicitar Cotización</Button
+    <div
+      class="flex flex-row mt-2 flex-wrap-reverse justify-center items-center gap-2 mx-auto"
     >
+      <SecondaryButton hrf={"#gallery"} target={"_self"}
+        >Ver galería</SecondaryButton
+      >
+      <Button
+        hrf={`https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=Hola, quería solicitar el presupuesto de: `}
+        >Solicitar Cotización</Button
+      >
+    </div>
   </article>
-  <article class="relative col-span-1 md:col-span-2 h-[350px] bg-white">
+  <article class="relative col-span-1 md:col-span-1 h-[350px] bg-white">
     <div
       class="absolute inset-0 bg-[url('/images/alambre1.webp')] bg-cover bg-center [mask-image:linear-gradient(transparent,black_50%)] md:[mask-image:linear-gradient(to_right,transparent,black_50%)]"
     >
