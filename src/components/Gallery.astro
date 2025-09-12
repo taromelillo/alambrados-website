@@ -94,10 +94,6 @@ const images = [
     width: 1536,
     height: 2048,
   },
-  //   {
-  //     width: 960,
-  //     height: 719,
-  //   },
 ];
 ---
 
@@ -108,31 +104,22 @@ const images = [
   {
     Array.from({ length: 22 }, (_, i) => (
       <a
-        class=""
         class:list={[
-          // `aspect-w-${images[i].width} aspect-h-${images[i].height}`,
+          "max-h-[350px] overflow-hidden",
+
           images[i].width > images[i].height ? "col-span-2" : "col-span-1",
-          // images[i].width > images[i].height ? "": ""
         ]}
         href={`/images/alambre${i + 1}.webp`}
         data-pswp-width={images[i].width}
         data-pswp-height={images[i].height}
         target="_blank"
       >
-        {/* <div class="h-[300px] w-[300px] object-center"> */}
         <img
           src={`/images/alambre${i + 1}.webp`}
-          class:list={[
-            "object-fit",
-            // "col-span-1",
-            // `aspect-w-${images[i].width} aspect-h-${images[i].height}`,
-            // images[i].width > images[i].height ? "col-span-2" : "col-span-1",
-            // images[i].width > images[i].height ? "": ""
-          ]}
+          class:list={["object-cover"]}
           loading="lazy"
           alt="Foto de trabajos de Alambres Melillo"
         />
-        {/* </div> */}
       </a>
     ))
   }
