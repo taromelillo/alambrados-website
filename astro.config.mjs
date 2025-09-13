@@ -30,6 +30,14 @@ export default defineConfig({
         context: "server",
         access: "public",
       }),
+      RESEND_API_KEY: envField.string({
+        context: "server",
+        access: "public",
+      }),
+      EMAIL: envField.string({
+        context: "server",
+        access: "public",
+      }),
     },
   },
 });
