@@ -16,15 +16,15 @@ const currentPath = Astro.url.pathname;
   <a href="/" class="text-lg flex items-center gap-1">
     <img
       src="/favicon.svg"
-      alt="Alambrados Melillo"
+      alt="Logo de Alambrados Melillo"
       loading="eager"
       class="size-14"
     />
     <span> Alambrados Melillo </span>
   </a>
-  <button id="menu-btn">
+  <div id="menu-btn">
     <Icon name="menu" size="28" class="flex sm:hidden" />
-  </button>
+  </div>
   <ul class="hidden sm:flex">
     {
       links.map(({ text, href }) => (

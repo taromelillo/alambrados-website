@@ -21,7 +21,10 @@ import { PHONE_NUMBER } from "astro:env/server";
     </div>
 
     <div class="px-4 gap-4 flex justify-center items-center">
-      <a href="https://www.facebook.com/profile.php?id=100057268907592">
+      <a
+        href="https://www.facebook.com/profile.php?id=100057268907592"
+        target="_blank"
+      >
         <Icon
           name="facebook"
           size={28}
@@ -31,6 +34,7 @@ import { PHONE_NUMBER } from "astro:env/server";
       </a>
       <a
         href=`https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=Hola, quería solicitar el presupuesto de: `
+        target="_blank"
       >
         <Icon
           name="whatsapp"
