@@ -14,8 +14,18 @@ import Sidenav from "@/components/Sidenav.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+      style-src 'self' 'unsafe-inline';
+      script-src 'self';
+      media-src *;
+      font-src *;"
+    />
+
     <title>{`${title} - Alambrados Melillo`}</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="prefetch" href="images/alambre1.webp" as="image" />
     <SEO {description} {canonical} title={`${title} - Alambrados Melillo`} />
     <ClientRouter />
   </head>
