@@ -34,7 +34,7 @@ const currentPath = Astro.url.pathname;
             class:list={[
               " mx-3",
               {
-                "text-red-400": currentPath === href,
+                "text-primary": currentPath === href,
               },
             ]}
           >
@@ -43,7 +43,7 @@ const currentPath = Astro.url.pathname;
           {currentPath === href && (
             <div
               transition:name="menu-link"
-              class="border-b-2 border-red-400 mx-3"
+              class="border-b-2 border-primary mx-3"
             />
           )}
         </li>
